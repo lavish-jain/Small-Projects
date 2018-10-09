@@ -1,4 +1,4 @@
-from GUI import ROCK, PAPER, SCISSOR
+import GUI
 import random
 
 class RockPaperScissors:
@@ -11,10 +11,10 @@ class RockPaperScissors:
         self.winner = self.__find_winner()
 
     def __choose_computer_move(self):
-        return random.choice([ROCK, PAPER, SCISSOR])
+        return random.choice([GUI.ROCK, GUI.PAPER, GUI.SCISSOR])
 
     def __find_winner(self):
-        if (self.user == ROCK and self.computer == SCISSOR) or (self.user == SCISSOR and self.computer == PAPER) or (self.user == PAPER and self.computer == ROCK):
+        if (self.user == GUI.ROCK and self.computer == GUI.SCISSOR) or (self.user == GUI.SCISSOR and self.computer == GUI.PAPER) or (self.user == GUI.PAPER and self.computer == GUI.ROCK):
             RockPaperScissors.user_score += 1
             return "YOU"
         elif self.user == self.computer:
